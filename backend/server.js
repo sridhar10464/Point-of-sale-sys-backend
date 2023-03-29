@@ -5,7 +5,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const colors = require("colors");
 const connectDb = require("./config/config");
-const path = require ("path");
+// const path = require ("path");
 
 
 // dotenv.config
@@ -30,11 +30,11 @@ app.use("/api/users", require("./routes/userRoutes"))
 app.use("/api/bills", require("./routes/billsRoute"))
 
 // static files
-app.use(express.static(path.join(__dirname, "./client/build")));
+// app.use(express.static(path.join(__dirname, "./client/build")));
 
-app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+// app.get("*", function (req, res) {
+//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
 
 // Port
 const PORT = process.env.PORT || 8080
