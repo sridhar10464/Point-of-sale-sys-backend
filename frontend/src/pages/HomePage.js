@@ -33,7 +33,7 @@ const HomePage = () => {
                 dispatch({
                     type: "SHOW_LOADING"
                 })
-                const { data } = await axios.get("api/items/get-item")
+                const { data } = await axios.get("https://point-of-sale-system.onrender.com/api/items/get-item")
                 setItemsData(data);
                 dispatch({ type: "HIDE_LOADING" });
                 console.log(data);
