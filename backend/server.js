@@ -32,9 +32,14 @@ app.use("/api/bills", require("./routes/billsRoute"))
 // static files
 // app.use(express.static(path.join(__dirname, "./client/build")));
 
-// app.get("*", function (req, res) {
+// app.get("/", function (req, res) {
 //   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 // });
+
+app.get("/", (req, res) => {
+    res.setHeader("Access-Control-Allow-Credentials", "true");
+    res.send("API is running...");
+});   
 
 // Port
 const PORT = process.env.PORT || 8080
