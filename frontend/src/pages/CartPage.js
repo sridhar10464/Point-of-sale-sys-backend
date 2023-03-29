@@ -81,7 +81,7 @@ const CartPage = () => {
                 userId: JSON.parse(localStorage.getItem("auth"))._id,
             };
             // console.log(newObject)
-            await axios.post("/api/bills/add-bills", newObject);
+            await axios.post("https://point-of-sale-system.onrender.com/api/bills/add-bills", newObject);
             message.success("Bill Generated")
             navigate("/bills");
         } catch (error) {
