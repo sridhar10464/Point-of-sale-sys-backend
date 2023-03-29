@@ -13,7 +13,7 @@ const CustomerPage = () => {
         dispatch({
             type: "SHOW_LOADING"
         })
-        const { data } = await axios.get("api/bills/get-bills")
+        const { data } = await axios.get("https://point-of-sale-system.onrender.com/api/bills/get-bills")
         setBillsData(data);
         dispatch({ type: "HIDE_LOADING" });
         console.log(data);
