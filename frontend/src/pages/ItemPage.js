@@ -16,7 +16,7 @@ const ItemPage = () => {
         dispatch({
             type: "SHOW_LOADING"
         })
-        const { data } = await axios.get("api/items/get-item")
+        const { data } = await axios.get("https://point-of-sale-system.onrender.com/api/items/get-item")
         setItemsData(data);
         dispatch({ type: "HIDE_LOADING" });
         console.log(data);
@@ -37,7 +37,7 @@ const ItemPage = () => {
       dispatch({
           type: "SHOW_LOADING"
       })
-      await axios.post("api/items/delete-item", {itemId:record._id} )
+      await axios.post("https://point-of-sale-system.onrender.com/api/items/delete-item", {itemId:record._id} )
       message.success("Item Deleted Successfully")
       getAllItems();
       setPopupModal(false);
@@ -84,7 +84,7 @@ const ItemPage = () => {
         dispatch({
             type: "SHOW_LOADING"
         })
-        const res = await axios.post("api/items/add-item", value)
+        const res = await axios.post("https://point-of-sale-system.onrender.com/api/items/add-item", value)
         message.success("Item Addeed Successfully")
         getAllItems();
         setPopupModal(false);
@@ -99,7 +99,7 @@ const ItemPage = () => {
         dispatch({
             type: "SHOW_LOADING"
         })
-        await axios.put("api/items/edit-item", {...value, itemId:editItem._id})
+        await axios.put("https://point-of-sale-system.onrender.com/api/items/edit-item", {...value, itemId:editItem._id})
         message.success("Item Updated Successfully")
         getAllItems();
         setPopupModal(false);
