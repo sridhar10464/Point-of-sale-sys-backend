@@ -13,7 +13,7 @@ const Login = () => {
             dispatch({
                 type: "SHOW_LOADING"
             })
-            const res = await axios.post("api/users/login", value);
+            const res = await axios.post("https://point-of-sale-system.onrender.com/api/users/login", value);
             dispatch({ type: "HIDE_LOADING" });
             message.success("User Login Successfully");
             localStorage.setItem("auth", JSON.stringify(res.data));
